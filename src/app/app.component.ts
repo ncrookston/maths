@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-import { ArithmeticComponent } from './arithmetic/arithmetic.component';
+import { RandomInts }   from './randomints.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css'],
-  directives: [ArithmeticComponent]
+  template: '<div>{{ints.int1}} {{ints.int2}}</div>'
 })
 export class AppComponent {
-  title = `Can't use directive!`;
+  constructor(private ints: RandomInts) {}
 }
