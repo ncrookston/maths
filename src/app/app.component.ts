@@ -28,6 +28,12 @@ export class Problem {
       this.denominator = ints[1];
       this.answer = ints[0] + ints[1];
     }
+    else if (op == '--') {
+      this.operator = '-';
+      this.numerator = ints[0] + ints[1];
+      this.denominator = ints[0];
+      this.answer = this.numerator - this.denominator;
+    }
     else {
       this.operator = '-';
       this.numerator = Math.max(ints[0], ints[1]);
