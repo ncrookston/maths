@@ -98,7 +98,7 @@ export class AppComponent {
       this.value += event.key;
   }
   submitValues() {
-    this.problem.correct = Number(this.value) == this.problem.answer;
+    this.problem.correct = this.value.length !== 0 && Number(this.value) == this.problem.answer;
     if (!this.problem.correct) {
       //alert("Wrong!");
       this.value = '';
