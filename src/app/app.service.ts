@@ -17,6 +17,6 @@ export class Operation {
   //operators = ['+','-'];
   operators = ['+','--','-','*','/'];
   get() {
-    return this.operators[Math.floor(Math.random() * 4)];
+    return this.operators[Math.floor(Math.random() * (this.operators.length-1))];
   }
 }

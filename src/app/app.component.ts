@@ -51,32 +51,7 @@ export class Problem {
     <div><span class="tmp">Number correct: {{numCorrect}}</span></div>
   </div>
   `,
-  styles: [`
-  :host {
-    display: block;
-    margin: auto;
-    width: 400px;
-    color: white;
-    text-align: center;
-    font-size: 50pt;
-    font-family: sans-serif;
-  }
-  .tmp {
-    width: 50%;
-    text-align: center;
-    font-size: 20pt;
-    font-family: sans-serif;
-  }
-  .testing {
-    background-color: cornflowerblue;
-  }
-  .right {
-    background-color: #7f7;
-  }
-  .wrong {
-    background-color: #f77;
-  }
-  `]
+  styleUrls: ['app/app.component.css']
 })
 export class AppComponent {
   private value: string = '';
