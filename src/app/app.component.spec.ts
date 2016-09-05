@@ -1,20 +1,23 @@
-/* tslint:disable:no-unused-variable */
+import { TestBed } from '@angular/core/testing';
+import { provideRoutes } from '@angular/router';
+import { RouterTestingModule } from '@angular/router/testing';
 
-import { addProviders, async, inject } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
-describe('App: Maths', () => {
+describe('App', () => {
+  // provide our implementations or mocks to the dependency injector
   beforeEach(() => {
-    addProviders([AppComponent]);
+    TestBed.configureTestingModule({
+      imports: [RouterTestingModule],
+      declarations: [AppComponent],
+      providers: [provideRoutes([])]
+    });
   });
 
-  it('should create the app',
-    inject([AppComponent], (app: AppComponent) => {
-      expect(app).toBeTruthy();
-    }));
+  it('should have an url', () => {
+    let fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    expect(fixture.debugElement.componentInstance.url).toEqual('https://github.com/preboot/angular2-webpack');
+  });
 
-  //it('should have as title \'app works!\'',
-  //  inject([AppComponent], (app: AppComponent) => {
-  //    expect(app.title).toEqual('app works!');
-  //s  }));
 });

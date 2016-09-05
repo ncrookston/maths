@@ -1,3 +1,15 @@
-<div>
-  Hi
-</div>
+<header>
+  <nav>
+    <a [routerLink]="['/kid','andrew']">Andrew</a>
+    <a [routerLink]="['/kid','anne']">Anne</a>
+    <a [routerLink]="['/kid','kate']">Kate</a>
+  </nav>
+</header>
+<main>
+  <!-- Images (and assets) are parsed and loaded from within the public directory -->
+  <h2>Kids' Math Problems</h2>
+
+  <router-outlet></router-outlet>
+</main>
+<footer>
+</footer>
