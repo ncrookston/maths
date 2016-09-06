@@ -9,7 +9,7 @@ import '../style/app.scss';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  private child: string;
+  private child: string = 'Children';
 
   constructor(private names: NameService) {}
   ngOnInit() {

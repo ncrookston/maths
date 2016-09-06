@@ -4,8 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { KidsComponent } from './kids/kids.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'kid/:id', component: KidsComponent}
+  { path: 'maths', component: HomeComponent },
+  { path: 'maths/kid/:id', component: KidsComponent}
 ];
 
 export const routing = RouterModule.forRoot(routes);
