@@ -6,8 +6,10 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { KidsComponent } from './kids/kids.component';
+import { NameService } from './kids/kids.service';
 import { ProblemService } from 'app/problem';
 import { routing } from './app.routing';
+import { CapitalizePipe } from './CapitalizePipe';
 
 import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
 
@@ -22,8 +24,10 @@ import { removeNgStyles, createNewHosts } from '@angularclass/hmr';
     AppComponent,
     HomeComponent,
     KidsComponent,
+    CapitalizePipe,
   ],
   providers: [
+    NameService,
     ProblemService,
   ],
   bootstrap: [AppComponent]

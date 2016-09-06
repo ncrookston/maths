@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { NameService } from './kids/kids.service';
 
 import '../style/app.scss';
 
@@ -7,7 +8,11 @@ import '../style/app.scss';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  constructor() {
+export class AppComponent implements OnInit {
+  private child: string;
+
+  constructor(private names: NameService) {}
+  ngOnInit() {
+    this.names.nameSink.subscribe(name => { this.child = name; });
   }
 }

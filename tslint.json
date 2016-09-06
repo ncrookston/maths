@@ -107,6 +107,6 @@
     "directive-class-suffix": true,
     "directive-selector-prefix": [true, "kid"],
     "component-selector-prefix": [true, "kid"],
-    "pipe-naming": [true, "camelCase", "kid"]
+    "pipe-naming": [false, "camelCase", "kid"]
   }
 }

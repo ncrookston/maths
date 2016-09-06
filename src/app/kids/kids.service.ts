@@ -1,21 +1,11 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 
 @Injectable()
-export class RandomInts {
-  sample() {
-    return Math.floor(Math.random() * 11);
-    // return Math.floor(Math.random() * 6);
-  }
-  get() {
-    return [this.sample(), this.sample()];
-  }
-}
-
-@Injectable()
-export class Operation {
-  // operators = ['+','-'];
-  operators = ['+', '--', '-', '*', '/'];
-  get() {
-    return this.operators[Math.floor(Math.random() * (this.operators.length - 1))];
+export class NameService {
+  private nameSource = new Subject<string>();
+  nameSink = this.nameSource.asObservable();
+  set_name(name: string) {
+    this.nameSource.next(name);
   }
 }

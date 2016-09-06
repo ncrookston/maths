@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 import { Problem, ProblemService } from 'app/problem';
+import { NameService } from './kids.service';
 
 @Component({
   selector: 'kid-work',
@@ -21,8 +22,8 @@ export class KidsComponent implements OnInit, OnDestroy {
   private wrong_problems: Problem[];
   private num_correct: number = 0;
 
-  constructor(private route: ActivatedRoute, private router: Router,
-              private problems: ProblemService) {}
+  constructor(private route: ActivatedRoute, private problems: ProblemService,
+    private names: NameService) {}
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -40,10 +41,13 @@ export class KidsComponent implements OnInit, OnDestroy {
           max_number = 6;
           operators = ['+', '-'];
           break;
+        default:
+          id = 'andrew';
         }
        this.problems.set_parameters(max_number, operators);
        this.current_problem = this.problems.next();
        this.num_correct = 0;
+       this.names.set_name(id);
      });
   }
   ngOnDestroy() {
